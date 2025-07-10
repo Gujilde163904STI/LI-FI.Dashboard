@@ -1,0 +1,674 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `CommandHistory` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  commandHistory_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: CommandHistory_Data!
+  ): CommandHistory_KeyOutput! @fdc_generated(from: "CommandHistory", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Device` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  device_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Device_Data!
+  ): Device_KeyOutput! @fdc_generated(from: "Device", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `DeviceConfiguration` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  deviceConfiguration_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: DeviceConfiguration_Data!
+  ): DeviceConfiguration_KeyOutput! @fdc_generated(from: "DeviceConfiguration", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `DeviceLog` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  deviceLog_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: DeviceLog_Data!
+  ): DeviceLog_KeyOutput! @fdc_generated(from: "DeviceLog", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `FirmwareUpdate` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  firmwareUpdate_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: FirmwareUpdate_Data!
+  ): FirmwareUpdate_KeyOutput! @fdc_generated(from: "FirmwareUpdate", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `User` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `CommandHistory` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  commandHistory_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [CommandHistory_Data!]!
+  ): [CommandHistory_KeyOutput!]! @fdc_generated(from: "CommandHistory", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Device` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  device_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Device_Data!]!
+  ): [Device_KeyOutput!]! @fdc_generated(from: "Device", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `DeviceConfiguration` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  deviceConfiguration_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [DeviceConfiguration_Data!]!
+  ): [DeviceConfiguration_KeyOutput!]! @fdc_generated(from: "DeviceConfiguration", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `DeviceLog` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  deviceLog_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [DeviceLog_Data!]!
+  ): [DeviceLog_KeyOutput!]! @fdc_generated(from: "DeviceLog", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `FirmwareUpdate` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  firmwareUpdate_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [FirmwareUpdate_Data!]!
+  ): [FirmwareUpdate_KeyOutput!]! @fdc_generated(from: "FirmwareUpdate", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `User` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `CommandHistory` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `CommandHistory`.
+  """
+  commandHistory_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: CommandHistory_Data!
+  ): CommandHistory_KeyOutput! @fdc_generated(from: "CommandHistory", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Device` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Device`.
+  """
+  device_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Device_Data!
+  ): Device_KeyOutput! @fdc_generated(from: "Device", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `DeviceConfiguration` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `DeviceConfiguration`.
+  """
+  deviceConfiguration_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: DeviceConfiguration_Data!
+  ): DeviceConfiguration_KeyOutput! @fdc_generated(from: "DeviceConfiguration", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `DeviceLog` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `DeviceLog`.
+  """
+  deviceLog_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: DeviceLog_Data!
+  ): DeviceLog_KeyOutput! @fdc_generated(from: "DeviceLog", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `FirmwareUpdate` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `FirmwareUpdate`.
+  """
+  firmwareUpdate_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: FirmwareUpdate_Data!
+  ): FirmwareUpdate_KeyOutput! @fdc_generated(from: "FirmwareUpdate", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `User` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `CommandHistory` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `CommandHistory`.
+  """
+  commandHistory_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [CommandHistory_Data!]!
+  ): [CommandHistory_KeyOutput!]! @fdc_generated(from: "CommandHistory", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Device` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Device`.
+  """
+  device_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Device_Data!]!
+  ): [Device_KeyOutput!]! @fdc_generated(from: "Device", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `DeviceConfiguration` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `DeviceConfiguration`.
+  """
+  deviceConfiguration_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [DeviceConfiguration_Data!]!
+  ): [DeviceConfiguration_KeyOutput!]! @fdc_generated(from: "DeviceConfiguration", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `DeviceLog` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `DeviceLog`.
+  """
+  deviceLog_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [DeviceLog_Data!]!
+  ): [DeviceLog_KeyOutput!]! @fdc_generated(from: "DeviceLog", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `FirmwareUpdate` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `FirmwareUpdate`.
+  """
+  firmwareUpdate_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [FirmwareUpdate_Data!]!
+  ): [FirmwareUpdate_KeyOutput!]! @fdc_generated(from: "FirmwareUpdate", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `User` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `CommandHistory` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `CommandHistory` or `null` if not found.
+  """
+  commandHistory_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: CommandHistory_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: CommandHistory_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: CommandHistory_Data!
+  ): CommandHistory_KeyOutput @fdc_generated(from: "CommandHistory", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Device` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Device` or `null` if not found.
+  """
+  device_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Device_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Device_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Device_Data!
+  ): Device_KeyOutput @fdc_generated(from: "Device", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `DeviceConfiguration` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `DeviceConfiguration` or `null` if not found.
+  """
+  deviceConfiguration_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: DeviceConfiguration_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: DeviceConfiguration_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: DeviceConfiguration_Data!
+  ): DeviceConfiguration_KeyOutput @fdc_generated(from: "DeviceConfiguration", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `DeviceLog` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `DeviceLog` or `null` if not found.
+  """
+  deviceLog_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: DeviceLog_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: DeviceLog_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: DeviceLog_Data!
+  ): DeviceLog_KeyOutput @fdc_generated(from: "DeviceLog", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `FirmwareUpdate` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `FirmwareUpdate` or `null` if not found.
+  """
+  firmwareUpdate_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: FirmwareUpdate_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: FirmwareUpdate_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: FirmwareUpdate_Data!
+  ): FirmwareUpdate_KeyOutput @fdc_generated(from: "FirmwareUpdate", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `User` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `User` or `null` if not found.
+  """
+  user_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: User_Data!
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `CommandHistory` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  commandHistory_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: CommandHistory_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: CommandHistory_Data!
+  ): Int! @fdc_generated(from: "CommandHistory", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Device` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  device_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Device_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Device_Data!
+  ): Int! @fdc_generated(from: "Device", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `DeviceConfiguration` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  deviceConfiguration_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: DeviceConfiguration_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: DeviceConfiguration_Data!
+  ): Int! @fdc_generated(from: "DeviceConfiguration", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `DeviceLog` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  deviceLog_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: DeviceLog_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: DeviceLog_Data!
+  ): Int! @fdc_generated(from: "DeviceLog", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `FirmwareUpdate` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  firmwareUpdate_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: FirmwareUpdate_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: FirmwareUpdate_Data!
+  ): Int! @fdc_generated(from: "FirmwareUpdate", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `User` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  user_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: User_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: User_Data!
+  ): Int! @fdc_generated(from: "User", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `CommandHistory` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  commandHistory_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: CommandHistory_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: CommandHistory_FirstRow
+  ): CommandHistory_KeyOutput @fdc_generated(from: "CommandHistory", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Device` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  device_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Device_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Device_FirstRow
+  ): Device_KeyOutput @fdc_generated(from: "Device", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `DeviceConfiguration` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  deviceConfiguration_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: DeviceConfiguration_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: DeviceConfiguration_FirstRow
+  ): DeviceConfiguration_KeyOutput @fdc_generated(from: "DeviceConfiguration", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `DeviceLog` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  deviceLog_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: DeviceLog_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: DeviceLog_FirstRow
+  ): DeviceLog_KeyOutput @fdc_generated(from: "DeviceLog", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `FirmwareUpdate` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  firmwareUpdate_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: FirmwareUpdate_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: FirmwareUpdate_FirstRow
+  ): FirmwareUpdate_KeyOutput @fdc_generated(from: "FirmwareUpdate", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `User` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  user_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `CommandHistory` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  commandHistory_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: CommandHistory_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "CommandHistory", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Device` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  device_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Device_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Device", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `DeviceConfiguration` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  deviceConfiguration_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: DeviceConfiguration_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceConfiguration", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `DeviceLog` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  deviceLog_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: DeviceLog_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceLog", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `FirmwareUpdate` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  firmwareUpdate_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: FirmwareUpdate_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "FirmwareUpdate", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `User` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  user_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: User_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "User", purpose: DELETE_MULTIPLE)
+}

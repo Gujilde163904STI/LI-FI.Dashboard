@@ -1,0 +1,792 @@
+extend type CommandHistory {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "CommandHistory", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `CommandHistory` table.
+  """
+  _count: Int! @fdc_generated(from: "CommandHistory", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CommandHistory` table where the `commandString` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  commandString_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CommandHistory.commandString", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CommandHistory` table where the `deviceId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  deviceId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CommandHistory.deviceId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CommandHistory` table where the `errorDetails` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  errorDetails_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CommandHistory.errorDetails", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CommandHistory` table where the `executedAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  executedAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CommandHistory.executedAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CommandHistory` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CommandHistory.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CommandHistory` table where the `response` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  response_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CommandHistory.response", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CommandHistory` table where the `senderId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  senderId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CommandHistory.senderId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CommandHistory` table where the `status` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  status_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CommandHistory.status", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `executedAt` field in the `CommandHistory` table.
+  """
+  executedAt_min: Timestamp @fdc_generated(from: "CommandHistory.executedAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `executedAt` field in the `CommandHistory` table.
+  """
+  executedAt_max: Timestamp @fdc_generated(from: "CommandHistory.executedAt", purpose: QUERY_MAX)
+}
+extend type Device {
+  """
+  ✨ List `CommandHistory` objects in a one-to-many relationship (where `CommandHistory`.`device` is this object).
+  """
+  commandHistories_on_device(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: CommandHistory_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [CommandHistory_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: CommandHistory_Having
+  ): [CommandHistory!]! @fdc_generated(from: "CommandHistory.device", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `DeviceConfiguration` objects in a one-to-many relationship (where `DeviceConfiguration`.`device` is this object).
+  """
+  deviceConfigurations_on_device(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: DeviceConfiguration_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [DeviceConfiguration_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: DeviceConfiguration_Having
+  ): [DeviceConfiguration!]! @fdc_generated(from: "DeviceConfiguration.device", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `DeviceLog` objects in a one-to-many relationship (where `DeviceLog`.`device` is this object).
+  """
+  deviceLogs_on_device(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: DeviceLog_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [DeviceLog_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: DeviceLog_Having
+  ): [DeviceLog!]! @fdc_generated(from: "DeviceLog.device", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `FirmwareUpdate` objects in a one-to-many relationship (where `FirmwareUpdate`.`device` is this object).
+  """
+  firmwareUpdates_on_device(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: FirmwareUpdate_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [FirmwareUpdate_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: FirmwareUpdate_Having
+  ): [FirmwareUpdate!]! @fdc_generated(from: "FirmwareUpdate.device", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Device", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Device` table.
+  """
+  _count: Int! @fdc_generated(from: "Device", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Device` table where the `connectionStatus` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  connectionStatus_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Device.connectionStatus", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Device` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Device.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Device` table where the `description` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  description_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Device.description", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Device` table where the `deviceName` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  deviceName_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Device.deviceName", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Device` table where the `firmwareVersion` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  firmwareVersion_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Device.firmwareVersion", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Device` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Device.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Device` table where the `lastHeartbeat` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  lastHeartbeat_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Device.lastHeartbeat", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Device` table where the `ownerId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  ownerId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Device.ownerId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Device` table where the `serialNumber` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  serialNumber_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Device.serialNumber", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `createdAt` field in the `Device` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "Device.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `lastHeartbeat` field in the `Device` table.
+  """
+  lastHeartbeat_min: Timestamp @fdc_generated(from: "Device.lastHeartbeat", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `Device` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "Device.createdAt", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `lastHeartbeat` field in the `Device` table.
+  """
+  lastHeartbeat_max: Timestamp @fdc_generated(from: "Device.lastHeartbeat", purpose: QUERY_MAX)
+}
+extend type DeviceConfiguration {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "DeviceConfiguration", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `DeviceConfiguration` table.
+  """
+  _count: Int! @fdc_generated(from: "DeviceConfiguration", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceConfiguration` table where the `appliedAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  appliedAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceConfiguration.appliedAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceConfiguration` table where the `appliedById` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  appliedById_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceConfiguration.appliedById", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceConfiguration` table where the `configKey` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  configKey_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceConfiguration.configKey", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceConfiguration` table where the `configValue` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  configValue_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceConfiguration.configValue", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceConfiguration` table where the `deviceId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  deviceId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceConfiguration.deviceId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceConfiguration` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceConfiguration.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceConfiguration` table where the `isPending` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  isPending_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceConfiguration.isPending", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `appliedAt` field in the `DeviceConfiguration` table.
+  """
+  appliedAt_min: Timestamp @fdc_generated(from: "DeviceConfiguration.appliedAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `appliedAt` field in the `DeviceConfiguration` table.
+  """
+  appliedAt_max: Timestamp @fdc_generated(from: "DeviceConfiguration.appliedAt", purpose: QUERY_MAX)
+}
+extend type DeviceLog {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "DeviceLog", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `DeviceLog` table.
+  """
+  _count: Int! @fdc_generated(from: "DeviceLog", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceLog` table where the `dataPayload` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  dataPayload_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceLog.dataPayload", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceLog` table where the `deviceId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  deviceId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceLog.deviceId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceLog` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceLog.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceLog` table where the `logLevel` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  logLevel_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceLog.logLevel", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceLog` table where the `message` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  message_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceLog.message", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DeviceLog` table where the `timestamp` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  timestamp_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DeviceLog.timestamp", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `timestamp` field in the `DeviceLog` table.
+  """
+  timestamp_min: Timestamp @fdc_generated(from: "DeviceLog.timestamp", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `timestamp` field in the `DeviceLog` table.
+  """
+  timestamp_max: Timestamp @fdc_generated(from: "DeviceLog.timestamp", purpose: QUERY_MAX)
+}
+extend type FirmwareUpdate {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "FirmwareUpdate", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `FirmwareUpdate` table.
+  """
+  _count: Int! @fdc_generated(from: "FirmwareUpdate", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FirmwareUpdate` table where the `completionAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  completionAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FirmwareUpdate.completionAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FirmwareUpdate` table where the `deviceId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  deviceId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FirmwareUpdate.deviceId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FirmwareUpdate` table where the `errorMessage` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  errorMessage_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FirmwareUpdate.errorMessage", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FirmwareUpdate` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FirmwareUpdate.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FirmwareUpdate` table where the `initiatedById` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  initiatedById_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FirmwareUpdate.initiatedById", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FirmwareUpdate` table where the `releaseNotes` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  releaseNotes_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FirmwareUpdate.releaseNotes", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FirmwareUpdate` table where the `status` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  status_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FirmwareUpdate.status", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FirmwareUpdate` table where the `updateInitiatedAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  updateInitiatedAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FirmwareUpdate.updateInitiatedAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FirmwareUpdate` table where the `versionNumber` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  versionNumber_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FirmwareUpdate.versionNumber", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `completionAt` field in the `FirmwareUpdate` table.
+  """
+  completionAt_min: Timestamp @fdc_generated(from: "FirmwareUpdate.completionAt", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `updateInitiatedAt` field in the `FirmwareUpdate` table.
+  """
+  updateInitiatedAt_min: Timestamp @fdc_generated(from: "FirmwareUpdate.updateInitiatedAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `completionAt` field in the `FirmwareUpdate` table.
+  """
+  completionAt_max: Timestamp @fdc_generated(from: "FirmwareUpdate.completionAt", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `updateInitiatedAt` field in the `FirmwareUpdate` table.
+  """
+  updateInitiatedAt_max: Timestamp @fdc_generated(from: "FirmwareUpdate.updateInitiatedAt", purpose: QUERY_MAX)
+}
+extend type User {
+  """
+  ✨ List `CommandHistory` objects in a one-to-many relationship (where `CommandHistory`.`sender` is this object).
+  """
+  commandHistories_on_sender(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: CommandHistory_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [CommandHistory_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: CommandHistory_Having
+  ): [CommandHistory!]! @fdc_generated(from: "CommandHistory.sender", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `Device` objects in a one-to-many relationship (where `Device`.`owner` is this object).
+  """
+  devices_on_owner(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Device_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Device_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Device_Having
+  ): [Device!]! @fdc_generated(from: "Device.owner", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `DeviceConfiguration` objects in a one-to-many relationship (where `DeviceConfiguration`.`appliedBy` is this object).
+  """
+  deviceConfigurations_on_appliedBy(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: DeviceConfiguration_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [DeviceConfiguration_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: DeviceConfiguration_Having
+  ): [DeviceConfiguration!]! @fdc_generated(from: "DeviceConfiguration.appliedBy", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `FirmwareUpdate` objects in a one-to-many relationship (where `FirmwareUpdate`.`initiatedBy` is this object).
+  """
+  firmwareUpdates_on_initiatedBy(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: FirmwareUpdate_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [FirmwareUpdate_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: FirmwareUpdate_Having
+  ): [FirmwareUpdate!]! @fdc_generated(from: "FirmwareUpdate.initiatedBy", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "User", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `User` table.
+  """
+  _count: Int! @fdc_generated(from: "User", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `displayName` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  displayName_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.displayName", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `email` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  email_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.email", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `photoUrl` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  photoUrl_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.photoUrl", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `createdAt` field in the `User` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "User.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `User` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "User.createdAt", purpose: QUERY_MAX)
+}

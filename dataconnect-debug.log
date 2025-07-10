@@ -1,0 +1,9 @@
+I0710 08:28:43.050732   91830 load.go:37] Reloading schema and connectors...
+I0710 08:28:43.145833   91830 control.go:84] [/emulator/LIFI-Dashboard bd24] UpdateResources(): done
+Schema: sources: schema/schema.gql [997B] 
+Connector "default": sources: 
+I0710 08:28:43.206733   91830 collector.go:107] schema extensions wrote into "/Users/djcarlogujilde/GALAHADD.DEV.PROJECTS/LIFI-Dashboard/dataconnect/.dataconnect/schema"
+Generated sources: main/relation.gql [29119B] main/query.gql [7865B] main/mutation.gql [21415B] main/implicit.gql [3633B] prelude.gql [71203B] main/input.gql [53161B] 
+I0710 08:28:43.207144   91830 load.go:115] Finished reloading
+I0710 08:28:43.211960   91830 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:9399
+I0710 08:28:43.213595   91830 dev.go:95] Listening on address (HTTP + gRPC): [::1]:9399

@@ -1,0 +1,320 @@
+extend type Query {
+  """
+  ✨ Look up a single `CommandHistory` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  commandHistory(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: CommandHistory_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: CommandHistory_FirstRow
+  ): CommandHistory @fdc_generated(from: "CommandHistory", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Device` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  device(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Device_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Device_FirstRow
+  ): Device @fdc_generated(from: "Device", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `DeviceConfiguration` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  deviceConfiguration(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: DeviceConfiguration_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: DeviceConfiguration_FirstRow
+  ): DeviceConfiguration @fdc_generated(from: "DeviceConfiguration", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `DeviceLog` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  deviceLog(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: DeviceLog_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: DeviceLog_FirstRow
+  ): DeviceLog @fdc_generated(from: "DeviceLog", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `FirmwareUpdate` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  firmwareUpdate(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: FirmwareUpdate_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: FirmwareUpdate_FirstRow
+  ): FirmwareUpdate @fdc_generated(from: "FirmwareUpdate", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `User` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  user(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User @fdc_generated(from: "User", purpose: QUERY_SINGLE)
+  """
+  ✨ List `CommandHistory` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  commandHistories(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: CommandHistory_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [CommandHistory_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: CommandHistory_Having
+  ): [CommandHistory!]! @fdc_generated(from: "CommandHistory", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Device` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  devices(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Device_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Device_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Device_Having
+  ): [Device!]! @fdc_generated(from: "Device", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `DeviceConfiguration` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  deviceConfigurations(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: DeviceConfiguration_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [DeviceConfiguration_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: DeviceConfiguration_Having
+  ): [DeviceConfiguration!]! @fdc_generated(from: "DeviceConfiguration", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `DeviceLog` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  deviceLogs(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: DeviceLog_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [DeviceLog_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: DeviceLog_Having
+  ): [DeviceLog!]! @fdc_generated(from: "DeviceLog", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `FirmwareUpdate` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  firmwareUpdates(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: FirmwareUpdate_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [FirmwareUpdate_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: FirmwareUpdate_Having
+  ): [FirmwareUpdate!]! @fdc_generated(from: "FirmwareUpdate", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `User` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  users(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: User_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [User_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: User_Having
+  ): [User!]! @fdc_generated(from: "User", purpose: QUERY_MULTIPLE)
+}

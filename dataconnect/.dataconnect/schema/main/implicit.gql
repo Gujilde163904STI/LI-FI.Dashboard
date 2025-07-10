@@ -1,0 +1,68 @@
+extend type CommandHistory {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "CommandHistory", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `CommandHistory`.`device`. It must match the value of `Device`.`id`. See `@ref` for how to customize it.
+  """
+  deviceId: UUID! @fdc_generated(from: "CommandHistory.device", purpose: IMPLICIT_REF_FIELD)
+  """
+  ✨ Implicit foreign key field based on `CommandHistory`.`sender`. It must match the value of `User`.`id`. See `@ref` for how to customize it.
+  """
+  senderId: UUID @fdc_generated(from: "CommandHistory.sender", purpose: IMPLICIT_REF_FIELD)
+}
+extend type Device {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "Device", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `Device`.`owner`. It must match the value of `User`.`id`. See `@ref` for how to customize it.
+  """
+  ownerId: UUID @fdc_generated(from: "Device.owner", purpose: IMPLICIT_REF_FIELD)
+}
+extend type DeviceConfiguration {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "DeviceConfiguration", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `DeviceConfiguration`.`appliedBy`. It must match the value of `User`.`id`. See `@ref` for how to customize it.
+  """
+  appliedById: UUID @fdc_generated(from: "DeviceConfiguration.appliedBy", purpose: IMPLICIT_REF_FIELD)
+  """
+  ✨ Implicit foreign key field based on `DeviceConfiguration`.`device`. It must match the value of `Device`.`id`. See `@ref` for how to customize it.
+  """
+  deviceId: UUID! @fdc_generated(from: "DeviceConfiguration.device", purpose: IMPLICIT_REF_FIELD)
+}
+extend type DeviceLog {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "DeviceLog", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `DeviceLog`.`device`. It must match the value of `Device`.`id`. See `@ref` for how to customize it.
+  """
+  deviceId: UUID! @fdc_generated(from: "DeviceLog.device", purpose: IMPLICIT_REF_FIELD)
+}
+extend type FirmwareUpdate {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "FirmwareUpdate", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `FirmwareUpdate`.`device`. It must match the value of `Device`.`id`. See `@ref` for how to customize it.
+  """
+  deviceId: UUID! @fdc_generated(from: "FirmwareUpdate.device", purpose: IMPLICIT_REF_FIELD)
+  """
+  ✨ Implicit foreign key field based on `FirmwareUpdate`.`initiatedBy`. It must match the value of `User`.`id`. See `@ref` for how to customize it.
+  """
+  initiatedById: UUID @fdc_generated(from: "FirmwareUpdate.initiatedBy", purpose: IMPLICIT_REF_FIELD)
+}
+extend type User {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "User", purpose: IMPLICIT_KEY_FIELD)
+}

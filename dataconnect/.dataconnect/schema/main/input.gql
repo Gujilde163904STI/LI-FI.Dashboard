@@ -1,0 +1,1718 @@
+"""
+✨ `CommandHistory_KeyOutput` returns the primary key fields of table type `CommandHistory`.
+
+It has the same format as `CommandHistory_Key`, but is only used as mutation return value.
+"""
+scalar CommandHistory_KeyOutput
+"""
+✨ `Device_KeyOutput` returns the primary key fields of table type `Device`.
+
+It has the same format as `Device_Key`, but is only used as mutation return value.
+"""
+scalar Device_KeyOutput
+"""
+✨ `DeviceConfiguration_KeyOutput` returns the primary key fields of table type `DeviceConfiguration`.
+
+It has the same format as `DeviceConfiguration_Key`, but is only used as mutation return value.
+"""
+scalar DeviceConfiguration_KeyOutput
+"""
+✨ `DeviceLog_KeyOutput` returns the primary key fields of table type `DeviceLog`.
+
+It has the same format as `DeviceLog_Key`, but is only used as mutation return value.
+"""
+scalar DeviceLog_KeyOutput
+"""
+✨ `FirmwareUpdate_KeyOutput` returns the primary key fields of table type `FirmwareUpdate`.
+
+It has the same format as `FirmwareUpdate_Key`, but is only used as mutation return value.
+"""
+scalar FirmwareUpdate_KeyOutput
+"""
+✨ `User_KeyOutput` returns the primary key fields of table type `User`.
+
+It has the same format as `User_Key`, but is only used as mutation return value.
+"""
+scalar User_KeyOutput
+"""
+✨ Generated data input type for table 'CommandHistory'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input CommandHistory_Data {
+  """
+  ✨ Generated from Field `CommandHistory`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `CommandHistory`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `CommandHistory`.`deviceId` of type `UUID!`
+  """
+  deviceId: UUID
+  """
+  ✨ `_expr` server value variant of `deviceId` (✨ Generated from Field `CommandHistory`.`deviceId` of type `UUID!`)
+  """
+  deviceId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `CommandHistory`.`senderId` of type `UUID`
+  """
+  senderId: UUID
+  """
+  ✨ `_expr` server value variant of `senderId` (✨ Generated from Field `CommandHistory`.`senderId` of type `UUID`)
+  """
+  senderId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `CommandHistory`.`device` of type `Device!`
+  """
+  device: Device_Key
+  """
+  ✨ Generated from Field `CommandHistory`.`sender` of type `User`
+  """
+  sender: User_Key
+  """
+  ✨ Generated from Field `CommandHistory`.`commandString` of type `String!`
+  """
+  commandString: String
+  """
+  ✨ `_expr` server value variant of `commandString` (✨ Generated from Field `CommandHistory`.`commandString` of type `String!`)
+  """
+  commandString_expr: String_Expr
+  """
+  ✨ Generated from Field `CommandHistory`.`errorDetails` of type `String`
+  """
+  errorDetails: String
+  """
+  ✨ `_expr` server value variant of `errorDetails` (✨ Generated from Field `CommandHistory`.`errorDetails` of type `String`)
+  """
+  errorDetails_expr: String_Expr
+  """
+  ✨ Generated from Field `CommandHistory`.`executedAt` of type `Timestamp!`
+  """
+  executedAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `executedAt` (✨ Generated from Field `CommandHistory`.`executedAt` of type `Timestamp!`)
+  """
+  executedAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `executedAt` (✨ Generated from Field `CommandHistory`.`executedAt` of type `Timestamp!`)
+  """
+  executedAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `executedAt` (✨ Generated from Field `CommandHistory`.`executedAt` of type `Timestamp!`)
+  """
+  executedAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `CommandHistory`.`response` of type `String`
+  """
+  response: String
+  """
+  ✨ `_expr` server value variant of `response` (✨ Generated from Field `CommandHistory`.`response` of type `String`)
+  """
+  response_expr: String_Expr
+  """
+  ✨ Generated from Field `CommandHistory`.`status` of type `String!`
+  """
+  status: String
+  """
+  ✨ `_expr` server value variant of `status` (✨ Generated from Field `CommandHistory`.`status` of type `String!`)
+  """
+  status_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'CommandHistory'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input CommandHistory_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [CommandHistory_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: CommandHistory_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [CommandHistory_Filter!]
+  """
+  ✨ Generated from Field `CommandHistory`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`deviceId` of type `UUID!`
+  """
+  deviceId: UUID_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`senderId` of type `UUID`
+  """
+  senderId: UUID_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`device` of type `Device!`
+  """
+  device: Device_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`sender` of type `User`
+  """
+  sender: User_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`commandString` of type `String!`
+  """
+  commandString: String_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`errorDetails` of type `String`
+  """
+  errorDetails: String_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`executedAt` of type `Timestamp!`
+  """
+  executedAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`response` of type `String`
+  """
+  response: String_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`status` of type `String!`
+  """
+  status: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'CommandHistory'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input CommandHistory_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [CommandHistory_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: CommandHistory_Filter
+}
+"""
+✨ Generated having input type for table 'CommandHistory'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input CommandHistory_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [CommandHistory_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: CommandHistory_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [CommandHistory_Having!]
+  """
+  ✨ Generated from Field `CommandHistory`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`commandString_count` of type `Int!`
+  """
+  commandString_count: Int_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`deviceId_count` of type `Int!`
+  """
+  deviceId_count: Int_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`errorDetails_count` of type `Int!`
+  """
+  errorDetails_count: Int_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`executedAt_count` of type `Int!`
+  """
+  executedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`response_count` of type `Int!`
+  """
+  response_count: Int_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`senderId_count` of type `Int!`
+  """
+  senderId_count: Int_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`status_count` of type `Int!`
+  """
+  status_count: Int_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`executedAt_min` of type `Timestamp`
+  """
+  executedAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `CommandHistory`.`executedAt_max` of type `Timestamp`
+  """
+  executedAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'CommandHistory'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input CommandHistory_Key {
+  """
+  ✨ Generated from Field `CommandHistory`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `CommandHistory`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'CommandHistory'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input CommandHistory_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: CommandHistory_Filter
+}
+"""
+✨ Generated order input type for table 'CommandHistory'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input CommandHistory_Order {
+  """
+  ✨ Generated from Field `CommandHistory`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `CommandHistory`.`deviceId` of type `UUID!`
+  """
+  deviceId: OrderDirection
+  """
+  ✨ Generated from Field `CommandHistory`.`senderId` of type `UUID`
+  """
+  senderId: OrderDirection
+  """
+  ✨ Generated from Field `CommandHistory`.`device` of type `Device!`
+  """
+  device: Device_Order
+  """
+  ✨ Generated from Field `CommandHistory`.`sender` of type `User`
+  """
+  sender: User_Order
+  """
+  ✨ Generated from Field `CommandHistory`.`commandString` of type `String!`
+  """
+  commandString: OrderDirection
+  """
+  ✨ Generated from Field `CommandHistory`.`errorDetails` of type `String`
+  """
+  errorDetails: OrderDirection
+  """
+  ✨ Generated from Field `CommandHistory`.`executedAt` of type `Timestamp!`
+  """
+  executedAt: OrderDirection
+  """
+  ✨ Generated from Field `CommandHistory`.`response` of type `String`
+  """
+  response: OrderDirection
+  """
+  ✨ Generated from Field `CommandHistory`.`status` of type `String!`
+  """
+  status: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Device'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Device_Data {
+  """
+  ✨ Generated from Field `Device`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Device`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Device`.`ownerId` of type `UUID`
+  """
+  ownerId: UUID
+  """
+  ✨ `_expr` server value variant of `ownerId` (✨ Generated from Field `Device`.`ownerId` of type `UUID`)
+  """
+  ownerId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Device`.`owner` of type `User`
+  """
+  owner: User_Key
+  """
+  ✨ Generated from Field `Device`.`connectionStatus` of type `String!`
+  """
+  connectionStatus: String
+  """
+  ✨ `_expr` server value variant of `connectionStatus` (✨ Generated from Field `Device`.`connectionStatus` of type `String!`)
+  """
+  connectionStatus_expr: String_Expr
+  """
+  ✨ Generated from Field `Device`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Device`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Device`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Device`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Device`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `Device`.`description` of type `String`)
+  """
+  description_expr: String_Expr
+  """
+  ✨ Generated from Field `Device`.`deviceName` of type `String!`
+  """
+  deviceName: String
+  """
+  ✨ `_expr` server value variant of `deviceName` (✨ Generated from Field `Device`.`deviceName` of type `String!`)
+  """
+  deviceName_expr: String_Expr
+  """
+  ✨ Generated from Field `Device`.`firmwareVersion` of type `String`
+  """
+  firmwareVersion: String
+  """
+  ✨ `_expr` server value variant of `firmwareVersion` (✨ Generated from Field `Device`.`firmwareVersion` of type `String`)
+  """
+  firmwareVersion_expr: String_Expr
+  """
+  ✨ Generated from Field `Device`.`lastHeartbeat` of type `Timestamp`
+  """
+  lastHeartbeat: Timestamp
+  """
+  ✨ `_expr` server value variant of `lastHeartbeat` (✨ Generated from Field `Device`.`lastHeartbeat` of type `Timestamp`)
+  """
+  lastHeartbeat_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `lastHeartbeat` (✨ Generated from Field `Device`.`lastHeartbeat` of type `Timestamp`)
+  """
+  lastHeartbeat_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `lastHeartbeat` (✨ Generated from Field `Device`.`lastHeartbeat` of type `Timestamp`)
+  """
+  lastHeartbeat_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Device`.`serialNumber` of type `String!`
+  """
+  serialNumber: String
+  """
+  ✨ `_expr` server value variant of `serialNumber` (✨ Generated from Field `Device`.`serialNumber` of type `String!`)
+  """
+  serialNumber_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'Device'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Device_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Device_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Device_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Device_Filter!]
+  """
+  ✨ Generated from Field `Device`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Device`.`ownerId` of type `UUID`
+  """
+  ownerId: UUID_Filter
+  """
+  ✨ Generated from Field `Device`.`owner` of type `User`
+  """
+  owner: User_Filter
+  """
+  ✨ Generated from Field `Device`.`connectionStatus` of type `String!`
+  """
+  connectionStatus: String_Filter
+  """
+  ✨ Generated from Field `Device`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Device`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `Device`.`deviceName` of type `String!`
+  """
+  deviceName: String_Filter
+  """
+  ✨ Generated from Field `Device`.`firmwareVersion` of type `String`
+  """
+  firmwareVersion: String_Filter
+  """
+  ✨ Generated from Field `Device`.`lastHeartbeat` of type `Timestamp`
+  """
+  lastHeartbeat: Timestamp_Filter
+  """
+  ✨ Generated from Field `Device`.`serialNumber` of type `String!`
+  """
+  serialNumber: String_Filter
+  """
+  ✨ Generated from Field `Device`.`commandHistories_on_device` of type `[CommandHistory!]!`
+  """
+  commandHistories_on_device: CommandHistory_ListFilter
+  """
+  ✨ Generated from Field `Device`.`deviceConfigurations_on_device` of type `[DeviceConfiguration!]!`
+  """
+  deviceConfigurations_on_device: DeviceConfiguration_ListFilter
+  """
+  ✨ Generated from Field `Device`.`deviceLogs_on_device` of type `[DeviceLog!]!`
+  """
+  deviceLogs_on_device: DeviceLog_ListFilter
+  """
+  ✨ Generated from Field `Device`.`firmwareUpdates_on_device` of type `[FirmwareUpdate!]!`
+  """
+  firmwareUpdates_on_device: FirmwareUpdate_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Device'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Device_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Device_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Device_Filter
+}
+"""
+✨ Generated having input type for table 'Device'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Device_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Device_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Device_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Device_Having!]
+  """
+  ✨ Generated from Field `Device`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Device`.`connectionStatus_count` of type `Int!`
+  """
+  connectionStatus_count: Int_Filter
+  """
+  ✨ Generated from Field `Device`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Device`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Device`.`deviceName_count` of type `Int!`
+  """
+  deviceName_count: Int_Filter
+  """
+  ✨ Generated from Field `Device`.`firmwareVersion_count` of type `Int!`
+  """
+  firmwareVersion_count: Int_Filter
+  """
+  ✨ Generated from Field `Device`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Device`.`lastHeartbeat_count` of type `Int!`
+  """
+  lastHeartbeat_count: Int_Filter
+  """
+  ✨ Generated from Field `Device`.`ownerId_count` of type `Int!`
+  """
+  ownerId_count: Int_Filter
+  """
+  ✨ Generated from Field `Device`.`serialNumber_count` of type `Int!`
+  """
+  serialNumber_count: Int_Filter
+  """
+  ✨ Generated from Field `Device`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Device`.`lastHeartbeat_min` of type `Timestamp`
+  """
+  lastHeartbeat_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Device`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Device`.`lastHeartbeat_max` of type `Timestamp`
+  """
+  lastHeartbeat_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'Device'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Device_Key {
+  """
+  ✨ Generated from Field `Device`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Device`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Device'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Device_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Device_Filter
+}
+"""
+✨ Generated order input type for table 'Device'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Device_Order {
+  """
+  ✨ Generated from Field `Device`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Device`.`ownerId` of type `UUID`
+  """
+  ownerId: OrderDirection
+  """
+  ✨ Generated from Field `Device`.`owner` of type `User`
+  """
+  owner: User_Order
+  """
+  ✨ Generated from Field `Device`.`connectionStatus` of type `String!`
+  """
+  connectionStatus: OrderDirection
+  """
+  ✨ Generated from Field `Device`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Device`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `Device`.`deviceName` of type `String!`
+  """
+  deviceName: OrderDirection
+  """
+  ✨ Generated from Field `Device`.`firmwareVersion` of type `String`
+  """
+  firmwareVersion: OrderDirection
+  """
+  ✨ Generated from Field `Device`.`lastHeartbeat` of type `Timestamp`
+  """
+  lastHeartbeat: OrderDirection
+  """
+  ✨ Generated from Field `Device`.`serialNumber` of type `String!`
+  """
+  serialNumber: OrderDirection
+}
+"""
+✨ Generated data input type for table 'DeviceConfiguration'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input DeviceConfiguration_Data {
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `DeviceConfiguration`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedById` of type `UUID`
+  """
+  appliedById: UUID
+  """
+  ✨ `_expr` server value variant of `appliedById` (✨ Generated from Field `DeviceConfiguration`.`appliedById` of type `UUID`)
+  """
+  appliedById_expr: UUID_Expr
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`deviceId` of type `UUID!`
+  """
+  deviceId: UUID
+  """
+  ✨ `_expr` server value variant of `deviceId` (✨ Generated from Field `DeviceConfiguration`.`deviceId` of type `UUID!`)
+  """
+  deviceId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedBy` of type `User`
+  """
+  appliedBy: User_Key
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`device` of type `Device!`
+  """
+  device: Device_Key
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedAt` of type `Timestamp!`
+  """
+  appliedAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `appliedAt` (✨ Generated from Field `DeviceConfiguration`.`appliedAt` of type `Timestamp!`)
+  """
+  appliedAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `appliedAt` (✨ Generated from Field `DeviceConfiguration`.`appliedAt` of type `Timestamp!`)
+  """
+  appliedAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `appliedAt` (✨ Generated from Field `DeviceConfiguration`.`appliedAt` of type `Timestamp!`)
+  """
+  appliedAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`configKey` of type `String!`
+  """
+  configKey: String
+  """
+  ✨ `_expr` server value variant of `configKey` (✨ Generated from Field `DeviceConfiguration`.`configKey` of type `String!`)
+  """
+  configKey_expr: String_Expr
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`configValue` of type `String!`
+  """
+  configValue: String
+  """
+  ✨ `_expr` server value variant of `configValue` (✨ Generated from Field `DeviceConfiguration`.`configValue` of type `String!`)
+  """
+  configValue_expr: String_Expr
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`isPending` of type `Boolean`
+  """
+  isPending: Boolean
+  """
+  ✨ `_expr` server value variant of `isPending` (✨ Generated from Field `DeviceConfiguration`.`isPending` of type `Boolean`)
+  """
+  isPending_expr: Boolean_Expr
+}
+"""
+✨ Generated filter input type for table 'DeviceConfiguration'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input DeviceConfiguration_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [DeviceConfiguration_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: DeviceConfiguration_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [DeviceConfiguration_Filter!]
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedById` of type `UUID`
+  """
+  appliedById: UUID_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`deviceId` of type `UUID!`
+  """
+  deviceId: UUID_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedBy` of type `User`
+  """
+  appliedBy: User_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`device` of type `Device!`
+  """
+  device: Device_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedAt` of type `Timestamp!`
+  """
+  appliedAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`configKey` of type `String!`
+  """
+  configKey: String_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`configValue` of type `String!`
+  """
+  configValue: String_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`isPending` of type `Boolean`
+  """
+  isPending: Boolean_Filter
+}
+"""
+✨ Generated first-row input type for table 'DeviceConfiguration'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input DeviceConfiguration_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [DeviceConfiguration_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: DeviceConfiguration_Filter
+}
+"""
+✨ Generated having input type for table 'DeviceConfiguration'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input DeviceConfiguration_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [DeviceConfiguration_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: DeviceConfiguration_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [DeviceConfiguration_Having!]
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedAt_count` of type `Int!`
+  """
+  appliedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedById_count` of type `Int!`
+  """
+  appliedById_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`configKey_count` of type `Int!`
+  """
+  configKey_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`configValue_count` of type `Int!`
+  """
+  configValue_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`deviceId_count` of type `Int!`
+  """
+  deviceId_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`isPending_count` of type `Int!`
+  """
+  isPending_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedAt_min` of type `Timestamp`
+  """
+  appliedAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedAt_max` of type `Timestamp`
+  """
+  appliedAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'DeviceConfiguration'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input DeviceConfiguration_Key {
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `DeviceConfiguration`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'DeviceConfiguration'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input DeviceConfiguration_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: DeviceConfiguration_Filter
+}
+"""
+✨ Generated order input type for table 'DeviceConfiguration'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input DeviceConfiguration_Order {
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedById` of type `UUID`
+  """
+  appliedById: OrderDirection
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`deviceId` of type `UUID!`
+  """
+  deviceId: OrderDirection
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedBy` of type `User`
+  """
+  appliedBy: User_Order
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`device` of type `Device!`
+  """
+  device: Device_Order
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`appliedAt` of type `Timestamp!`
+  """
+  appliedAt: OrderDirection
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`configKey` of type `String!`
+  """
+  configKey: OrderDirection
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`configValue` of type `String!`
+  """
+  configValue: OrderDirection
+  """
+  ✨ Generated from Field `DeviceConfiguration`.`isPending` of type `Boolean`
+  """
+  isPending: OrderDirection
+}
+"""
+✨ Generated data input type for table 'DeviceLog'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input DeviceLog_Data {
+  """
+  ✨ Generated from Field `DeviceLog`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `DeviceLog`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `DeviceLog`.`deviceId` of type `UUID!`
+  """
+  deviceId: UUID
+  """
+  ✨ `_expr` server value variant of `deviceId` (✨ Generated from Field `DeviceLog`.`deviceId` of type `UUID!`)
+  """
+  deviceId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `DeviceLog`.`device` of type `Device!`
+  """
+  device: Device_Key
+  """
+  ✨ Generated from Field `DeviceLog`.`dataPayload` of type `String`
+  """
+  dataPayload: String
+  """
+  ✨ `_expr` server value variant of `dataPayload` (✨ Generated from Field `DeviceLog`.`dataPayload` of type `String`)
+  """
+  dataPayload_expr: String_Expr
+  """
+  ✨ Generated from Field `DeviceLog`.`logLevel` of type `String!`
+  """
+  logLevel: String
+  """
+  ✨ `_expr` server value variant of `logLevel` (✨ Generated from Field `DeviceLog`.`logLevel` of type `String!`)
+  """
+  logLevel_expr: String_Expr
+  """
+  ✨ Generated from Field `DeviceLog`.`message` of type `String!`
+  """
+  message: String
+  """
+  ✨ `_expr` server value variant of `message` (✨ Generated from Field `DeviceLog`.`message` of type `String!`)
+  """
+  message_expr: String_Expr
+  """
+  ✨ Generated from Field `DeviceLog`.`timestamp` of type `Timestamp!`
+  """
+  timestamp: Timestamp
+  """
+  ✨ `_expr` server value variant of `timestamp` (✨ Generated from Field `DeviceLog`.`timestamp` of type `Timestamp!`)
+  """
+  timestamp_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `timestamp` (✨ Generated from Field `DeviceLog`.`timestamp` of type `Timestamp!`)
+  """
+  timestamp_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `timestamp` (✨ Generated from Field `DeviceLog`.`timestamp` of type `Timestamp!`)
+  """
+  timestamp_update: [Timestamp_Update!]
+}
+"""
+✨ Generated filter input type for table 'DeviceLog'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input DeviceLog_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [DeviceLog_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: DeviceLog_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [DeviceLog_Filter!]
+  """
+  ✨ Generated from Field `DeviceLog`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`deviceId` of type `UUID!`
+  """
+  deviceId: UUID_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`device` of type `Device!`
+  """
+  device: Device_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`dataPayload` of type `String`
+  """
+  dataPayload: String_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`logLevel` of type `String!`
+  """
+  logLevel: String_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`message` of type `String!`
+  """
+  message: String_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`timestamp` of type `Timestamp!`
+  """
+  timestamp: Timestamp_Filter
+}
+"""
+✨ Generated first-row input type for table 'DeviceLog'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input DeviceLog_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [DeviceLog_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: DeviceLog_Filter
+}
+"""
+✨ Generated having input type for table 'DeviceLog'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input DeviceLog_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [DeviceLog_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: DeviceLog_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [DeviceLog_Having!]
+  """
+  ✨ Generated from Field `DeviceLog`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`dataPayload_count` of type `Int!`
+  """
+  dataPayload_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`deviceId_count` of type `Int!`
+  """
+  deviceId_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`logLevel_count` of type `Int!`
+  """
+  logLevel_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`message_count` of type `Int!`
+  """
+  message_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`timestamp_count` of type `Int!`
+  """
+  timestamp_count: Int_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`timestamp_min` of type `Timestamp`
+  """
+  timestamp_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `DeviceLog`.`timestamp_max` of type `Timestamp`
+  """
+  timestamp_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'DeviceLog'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input DeviceLog_Key {
+  """
+  ✨ Generated from Field `DeviceLog`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `DeviceLog`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'DeviceLog'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input DeviceLog_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: DeviceLog_Filter
+}
+"""
+✨ Generated order input type for table 'DeviceLog'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input DeviceLog_Order {
+  """
+  ✨ Generated from Field `DeviceLog`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `DeviceLog`.`deviceId` of type `UUID!`
+  """
+  deviceId: OrderDirection
+  """
+  ✨ Generated from Field `DeviceLog`.`device` of type `Device!`
+  """
+  device: Device_Order
+  """
+  ✨ Generated from Field `DeviceLog`.`dataPayload` of type `String`
+  """
+  dataPayload: OrderDirection
+  """
+  ✨ Generated from Field `DeviceLog`.`logLevel` of type `String!`
+  """
+  logLevel: OrderDirection
+  """
+  ✨ Generated from Field `DeviceLog`.`message` of type `String!`
+  """
+  message: OrderDirection
+  """
+  ✨ Generated from Field `DeviceLog`.`timestamp` of type `Timestamp!`
+  """
+  timestamp: OrderDirection
+}
+"""
+✨ Generated data input type for table 'FirmwareUpdate'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input FirmwareUpdate_Data {
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `FirmwareUpdate`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`deviceId` of type `UUID!`
+  """
+  deviceId: UUID
+  """
+  ✨ `_expr` server value variant of `deviceId` (✨ Generated from Field `FirmwareUpdate`.`deviceId` of type `UUID!`)
+  """
+  deviceId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`initiatedById` of type `UUID`
+  """
+  initiatedById: UUID
+  """
+  ✨ `_expr` server value variant of `initiatedById` (✨ Generated from Field `FirmwareUpdate`.`initiatedById` of type `UUID`)
+  """
+  initiatedById_expr: UUID_Expr
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`device` of type `Device!`
+  """
+  device: Device_Key
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`initiatedBy` of type `User`
+  """
+  initiatedBy: User_Key
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`completionAt` of type `Timestamp`
+  """
+  completionAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `completionAt` (✨ Generated from Field `FirmwareUpdate`.`completionAt` of type `Timestamp`)
+  """
+  completionAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `completionAt` (✨ Generated from Field `FirmwareUpdate`.`completionAt` of type `Timestamp`)
+  """
+  completionAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `completionAt` (✨ Generated from Field `FirmwareUpdate`.`completionAt` of type `Timestamp`)
+  """
+  completionAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`errorMessage` of type `String`
+  """
+  errorMessage: String
+  """
+  ✨ `_expr` server value variant of `errorMessage` (✨ Generated from Field `FirmwareUpdate`.`errorMessage` of type `String`)
+  """
+  errorMessage_expr: String_Expr
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`releaseNotes` of type `String`
+  """
+  releaseNotes: String
+  """
+  ✨ `_expr` server value variant of `releaseNotes` (✨ Generated from Field `FirmwareUpdate`.`releaseNotes` of type `String`)
+  """
+  releaseNotes_expr: String_Expr
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`status` of type `String!`
+  """
+  status: String
+  """
+  ✨ `_expr` server value variant of `status` (✨ Generated from Field `FirmwareUpdate`.`status` of type `String!`)
+  """
+  status_expr: String_Expr
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`updateInitiatedAt` of type `Timestamp!`
+  """
+  updateInitiatedAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `updateInitiatedAt` (✨ Generated from Field `FirmwareUpdate`.`updateInitiatedAt` of type `Timestamp!`)
+  """
+  updateInitiatedAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `updateInitiatedAt` (✨ Generated from Field `FirmwareUpdate`.`updateInitiatedAt` of type `Timestamp!`)
+  """
+  updateInitiatedAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `updateInitiatedAt` (✨ Generated from Field `FirmwareUpdate`.`updateInitiatedAt` of type `Timestamp!`)
+  """
+  updateInitiatedAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`versionNumber` of type `String!`
+  """
+  versionNumber: String
+  """
+  ✨ `_expr` server value variant of `versionNumber` (✨ Generated from Field `FirmwareUpdate`.`versionNumber` of type `String!`)
+  """
+  versionNumber_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'FirmwareUpdate'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input FirmwareUpdate_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [FirmwareUpdate_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: FirmwareUpdate_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [FirmwareUpdate_Filter!]
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`deviceId` of type `UUID!`
+  """
+  deviceId: UUID_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`initiatedById` of type `UUID`
+  """
+  initiatedById: UUID_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`device` of type `Device!`
+  """
+  device: Device_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`initiatedBy` of type `User`
+  """
+  initiatedBy: User_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`completionAt` of type `Timestamp`
+  """
+  completionAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`errorMessage` of type `String`
+  """
+  errorMessage: String_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`releaseNotes` of type `String`
+  """
+  releaseNotes: String_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`status` of type `String!`
+  """
+  status: String_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`updateInitiatedAt` of type `Timestamp!`
+  """
+  updateInitiatedAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`versionNumber` of type `String!`
+  """
+  versionNumber: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'FirmwareUpdate'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input FirmwareUpdate_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [FirmwareUpdate_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: FirmwareUpdate_Filter
+}
+"""
+✨ Generated having input type for table 'FirmwareUpdate'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input FirmwareUpdate_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [FirmwareUpdate_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: FirmwareUpdate_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [FirmwareUpdate_Having!]
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`completionAt_count` of type `Int!`
+  """
+  completionAt_count: Int_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`deviceId_count` of type `Int!`
+  """
+  deviceId_count: Int_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`errorMessage_count` of type `Int!`
+  """
+  errorMessage_count: Int_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`initiatedById_count` of type `Int!`
+  """
+  initiatedById_count: Int_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`releaseNotes_count` of type `Int!`
+  """
+  releaseNotes_count: Int_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`status_count` of type `Int!`
+  """
+  status_count: Int_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`updateInitiatedAt_count` of type `Int!`
+  """
+  updateInitiatedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`versionNumber_count` of type `Int!`
+  """
+  versionNumber_count: Int_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`completionAt_min` of type `Timestamp`
+  """
+  completionAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`updateInitiatedAt_min` of type `Timestamp`
+  """
+  updateInitiatedAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`completionAt_max` of type `Timestamp`
+  """
+  completionAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`updateInitiatedAt_max` of type `Timestamp`
+  """
+  updateInitiatedAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'FirmwareUpdate'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input FirmwareUpdate_Key {
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `FirmwareUpdate`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'FirmwareUpdate'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input FirmwareUpdate_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: FirmwareUpdate_Filter
+}
+"""
+✨ Generated order input type for table 'FirmwareUpdate'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input FirmwareUpdate_Order {
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`deviceId` of type `UUID!`
+  """
+  deviceId: OrderDirection
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`initiatedById` of type `UUID`
+  """
+  initiatedById: OrderDirection
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`device` of type `Device!`
+  """
+  device: Device_Order
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`initiatedBy` of type `User`
+  """
+  initiatedBy: User_Order
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`completionAt` of type `Timestamp`
+  """
+  completionAt: OrderDirection
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`errorMessage` of type `String`
+  """
+  errorMessage: OrderDirection
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`releaseNotes` of type `String`
+  """
+  releaseNotes: OrderDirection
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`status` of type `String!`
+  """
+  status: OrderDirection
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`updateInitiatedAt` of type `Timestamp!`
+  """
+  updateInitiatedAt: OrderDirection
+  """
+  ✨ Generated from Field `FirmwareUpdate`.`versionNumber` of type `String!`
+  """
+  versionNumber: OrderDirection
+}
+"""
+✨ Generated data input type for table 'User'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input User_Data {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String!`
+  """
+  displayName: String
+  """
+  ✨ `_expr` server value variant of `displayName` (✨ Generated from Field `User`.`displayName` of type `String!`)
+  """
+  displayName_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`email` of type `String`
+  """
+  email: String
+  """
+  ✨ `_expr` server value variant of `email` (✨ Generated from Field `User`.`email` of type `String`)
+  """
+  email_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`photoUrl` of type `String`
+  """
+  photoUrl: String
+  """
+  ✨ `_expr` server value variant of `photoUrl` (✨ Generated from Field `User`.`photoUrl` of type `String`)
+  """
+  photoUrl_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'User'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [User_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: User_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [User_Filter!]
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String!`
+  """
+  displayName: String_Filter
+  """
+  ✨ Generated from Field `User`.`email` of type `String`
+  """
+  email: String_Filter
+  """
+  ✨ Generated from Field `User`.`photoUrl` of type `String`
+  """
+  photoUrl: String_Filter
+  """
+  ✨ Generated from Field `User`.`commandHistories_on_sender` of type `[CommandHistory!]!`
+  """
+  commandHistories_on_sender: CommandHistory_ListFilter
+  """
+  ✨ Generated from Field `User`.`devices_on_owner` of type `[Device!]!`
+  """
+  devices_on_owner: Device_ListFilter
+  """
+  ✨ Generated from Field `User`.`deviceConfigurations_on_appliedBy` of type `[DeviceConfiguration!]!`
+  """
+  deviceConfigurations_on_appliedBy: DeviceConfiguration_ListFilter
+  """
+  ✨ Generated from Field `User`.`firmwareUpdates_on_initiatedBy` of type `[FirmwareUpdate!]!`
+  """
+  firmwareUpdates_on_initiatedBy: FirmwareUpdate_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'User'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input User_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [User_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: User_Filter
+}
+"""
+✨ Generated having input type for table 'User'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [User_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: User_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [User_Having!]
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`displayName_count` of type `Int!`
+  """
+  displayName_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`photoUrl_count` of type `Int!`
+  """
+  photoUrl_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'User'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input User_Key {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'User'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input User_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: User_Filter
+}
+"""
+✨ Generated order input type for table 'User'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input User_Order {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String!`
+  """
+  displayName: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email` of type `String`
+  """
+  email: OrderDirection
+  """
+  ✨ Generated from Field `User`.`photoUrl` of type `String`
+  """
+  photoUrl: OrderDirection
+}
