@@ -1,0 +1,55 @@
+type User @table {
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+}
+
+type Device @table {
+  deviceName: String!
+  serialNumber: String!
+  connectionStatus: String!
+  createdAt: Timestamp!
+  description: String
+  lastHeartbeat: Timestamp
+  firmwareVersion: String
+  owner: User
+}
+
+type DeviceConfiguration @table {
+  configKey: String!
+  configValue: String!
+  appliedAt: Timestamp!
+  device: Device!
+  appliedBy: User
+  isPending: Boolean
+}
+
+type DeviceLog @table {
+  timestamp: Timestamp!
+  logLevel: String!
+  message: String!
+  device: Device!
+  dataPayload: String
+}
+
+type CommandHistory @table {
+  commandString: String!
+  status: String!
+  executedAt: Timestamp!
+  sender: User
+  device: Device!
+  response: String
+  errorDetails: String
+}
+
+type FirmwareUpdate @table {
+  versionNumber: String!
+  updateInitiatedAt: Timestamp!
+  status: String!
+  device: Device!
+  releaseNotes: String
+  initiatedBy: User
+  completionAt: Timestamp
+  errorMessage: String
+}
