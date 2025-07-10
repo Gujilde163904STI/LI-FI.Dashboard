@@ -1,4 +1,4 @@
-name: Node.js CI with Webpack
+name: Node.js CI (Next.js Build)
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x]
+        node-version: [18.x, 20.x]
 
     steps:
     - name: Checkout repository
@@ -25,17 +25,14 @@ jobs:
         cache: 'npm'
 
     - name: Install dependencies
-      run: |
-        npm ci
+      run: npm ci
 
-    - name: Build with Webpack
-      run: |
-        npx webpack --mode=production
+    - name: Build Next.js app
+      run: npm run build
 
-    # Optional: Upload build artifacts
-    - name: Upload build output (optional)
+    - name: Upload build output
       if: success()
       uses: actions/upload-artifact@v4
       with:
-        name: build
-        path: dist/
+        name: nextjs-build
+        path: .next/
